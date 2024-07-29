@@ -2,18 +2,18 @@ import Currency from './3-currency';
 
 class Pricing {
   constructor(amount, currency) {
-    this._amount = this._verifyNum(amount, 'Amount');
-    this._currency = this._verifyCurrency(currency, 'Currency');
+    this._amount = Pricing._verifyNum(amount, 'Amount');
+    this._currency = Pricing._verifyCurrency(currency, 'Currency');
   }
 
-  _verifyNum(value, attribute) {
+  static _verifyNum(value, attribute) {
     if (typeof value !== 'number') {
       throw new TypeError(`${attribute} must be a number`);
     }
     return value;
   }
 
-  _verifyCurrency(value, attribute) {
+  static _verifyCurrency(value, attribute) {
     if (!(value instanceof Currency)) {
       throw new TypeError(`${attribute} must be an instance of Currency`);
     }
@@ -25,7 +25,7 @@ class Pricing {
   }
 
   set amount(value) {
-    this._amount = this._verifyNum(value, 'Amount');
+    this._amount = Pricing._verifyNum(value, 'Amount');
   }
 
   get currency() {
@@ -33,7 +33,7 @@ class Pricing {
   }
 
   set currency(value) {
-    this._currency = this._verifyCurrency(value, 'Currency');
+    this._currency = Pricing._verifyCurrency(value, 'Currency');
   }
 
   displayFullPrice() {
