@@ -4,7 +4,7 @@ export default class Car {
     this._motor = motor;
     this._color = color;
   }
-  
+
   cloneCar() {
     const cloned = new this.constructor();
     cloned._brand = undefined;
