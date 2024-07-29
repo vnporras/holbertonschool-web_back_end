@@ -1,4 +1,4 @@
-import { listOfStudents } from './9-hoisting';
+import { listOfStudents } from './9-hoisting.length';
 
 console.log(listOfStudents);
 
