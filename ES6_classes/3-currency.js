@@ -10,26 +10,26 @@ class Currency {
     }
     return value;
   }
-  
+
   get code() {
     return this._code;
   }
-  
+
   set code(value) {
     this._code = Currency.verifyStr(value, 'Code');
   }
-  
+
   get name() {
     return this._name;
   }
-  
+
   set name(value) {
     this._name = Currency.verifyStr(value, 'Name');
   }
-  
+
   displayFullCurrency() {
     return `${this._name} (${this._code})`;
   }
 }
-  
+
 export default Currency;
