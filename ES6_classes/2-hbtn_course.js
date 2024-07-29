@@ -20,7 +20,7 @@ class HolbertonCourse {
   }
 
   static _verifyArray(value, attribute) {
-    if (!Array.isArray(value) || !value.every(item => typeof item === 'string')) {
+    if (!Array.isArray(value) || !value.every((item) => typeof item === 'string')) {
       throw new TypeError(`${attribute} must be an array of strings`);
     }
     return value;
