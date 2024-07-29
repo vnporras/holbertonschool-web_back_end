@@ -12,4 +12,3 @@ export default class Airport {
       return `Airport [${this._code}] { _name: '${this._name}', _code: '${this._code}' }`;
     }
   }
-  
