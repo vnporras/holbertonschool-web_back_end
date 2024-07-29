@@ -5,21 +5,21 @@ class HolbertonCourse {
     this._students = this._verifyArray(students, 'Students');
   }
 
-  _verifyString(value, attribute) {
+  static _verifyString(value, attribute) {
     if (typeof value !== 'string') {
       throw new TypeError(`${attribute} must be a string`);
     }
-      return value;
-    }
+    return value;
+  }
 
-  _verifyNumber(value, attribute) {
+  static _verifyNumber(value, attribute) {
     if (typeof value !== 'number') {
       throw new TypeError(`${attribute} must be a number`);
     }
     return value;
   }
 
-  _verifyArray(value, attribute) {
+  static _verifyArray(value, attribute) {
     if (!Array.isArray(value) || !value.every(item => typeof item === 'string')) {
       throw new TypeError(`${attribute} must be an array of strings`);
     }
