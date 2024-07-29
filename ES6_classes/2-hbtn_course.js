@@ -31,15 +31,15 @@ class HolbertonCourse {
   }
 
   set name(value) {
-     this._name = this._verifyString(value, 'Name');
+    this._name = HolbertonCourse._verifyString(value, 'Name');
   }
 
   get length() {
-     return this._length;
+    return this._length;
   }
 
   set length(value) {
-    this._length = this._verifyNumber(value, 'Length');
+    this._length = HolbertonCourse._verifyNumber(value, 'Length');
   }
 
   get students() {
@@ -47,7 +47,7 @@ class HolbertonCourse {
   }
 
   set students(value) {
-    this._students = this._verifyArray(value, 'Students');
+    this._students = HolbertonCourse._verifyArray(value, 'Students');
   }
 }
 
