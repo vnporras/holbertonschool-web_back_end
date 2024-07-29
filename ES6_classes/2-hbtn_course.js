@@ -1,8 +1,8 @@
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this._verifyString(name, 'Name');
-    this._length = this._verifyNumber(length, 'Length');
-    this._students = this._verifyArray(students, 'Students');
+    this._name = HolbertonCourse._verifyString(name, 'Name');
+    this._length = HolbertonCourse._verifyNumber(length, 'Length');
+    this._students = HolbertonCourse._verifyArray(students, 'Students');
   }
 
   static _verifyString(value, attribute) {
