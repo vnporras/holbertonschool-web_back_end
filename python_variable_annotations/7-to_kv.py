@@ -7,7 +7,7 @@ with a string and the square of an int/float.
 from typing import Union, Tuple
 
 
-def to_kv(k: str, v: Union[int, float]) -> Tuple[str, Union[int, float]]:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
     Returns a tuple with a string and the square of the given int/float.
 
@@ -17,12 +17,8 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, Union[int, float]]:
     square is to be calculated.
 
     Returns:
-    Tuple[str, Union[int, float]]: A tuple where the
+    Tuple[str, float]: A tuple where the
     first element is the string k and the second element
-    is the square of v as a float if v is a float,
-    or as an int if v is an int.
-"""
-    if isinstance(v, int):
-        return (k, v ** 2)
-    else:
-        return (k, float(v ** 2))
+    is the square of v as a float.
+    """
+    return (k, float(v ** 2))
