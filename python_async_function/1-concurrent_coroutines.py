@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-This module contains an asynchronous routine `wait_n` that executes multiple
-`wait_random` coroutines concurrently and returns the delays in ascending order.
+This module contains an asynchronous routine `wait_n` that
+executes multiple `wait_random` coroutines concurrently and
+returns the delays in ascending order.
 """
 
 import asyncio
