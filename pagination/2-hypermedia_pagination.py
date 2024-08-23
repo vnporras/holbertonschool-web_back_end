@@ -80,8 +80,10 @@ class Server:
                 - 'page_size': Number of items on the current page.
                 - 'page': Current page number.
                 - 'data': List of items on the current page.
-                - 'next_page': Page number of the next page, or None if on the last page.
-                - 'prev_page': Page number of the previous page, or None if on the first page.
+                - 'next_page': Page number of the next page,
+                or None if on the last page.
+                - 'prev_page': Page number of the previous page,
+                or None if on the first page.
                 - 'total_pages': Total number of pages.
         """
 
