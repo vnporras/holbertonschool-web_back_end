@@ -6,31 +6,33 @@ returns the delays in ascending order.
 """
 
 import asyncio
-from typing import List
-import importlib
-
-module_name = "0-basic_async_syntax"
-wait_random = importlib.import_module(module_name).wait_random
+import typing
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> List[float]:
+async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     """
-    Spawns the `wait_random` coroutine `n` times with the
-    specified `max_delay`.
+    spawn wait_random n times with the specified max_delay.
 
-    Args:
-        n (int): The number of times to execute `wait_random`.
-        max_delay (int): The maximum delay value for `wait_random`.
+    Parameters:
+    n: int
+    max_dalay: int
 
     Returns:
-        List[float]: A list of delay times in ascending order.
+    return the list of all the delays (float values)
     """
+    delays = []
 
-    delays = [await wait_random(max_delay) for _ in range(n)]
+    tasks = [wait_random(max_delay) for _ in range(n)]
 
-    for i in range(len(delays)):
-        for j in range(i + 1, len(delays)):
-            if delays[i] > delays[j]:
-                delays[i], delays[j] = delays[j], delays[i]
+    for delay in await asyncio.gather(*tasks):
+        inserted = False
+        for i in range(len(delays)):
+            if delay < delays[i]:
+                delays.insert(i, delay)
+                inserted = True
+                break
+        if not inserted:
+            delays.append(delay)
 
     return delays

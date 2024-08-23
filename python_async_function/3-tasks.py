@@ -12,12 +12,10 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
     Creates an asyncio Task that runs the wait_random coroutine.
 
     Parameters:
-    -----------
     max_delay : int
         Maximum delay in seconds.
 
     Returns:
-    --------
     asyncio.Task
         A Task object for the wait_random coroutine.
     """
