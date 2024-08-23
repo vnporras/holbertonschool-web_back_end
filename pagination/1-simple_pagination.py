@@ -6,6 +6,7 @@ import csv
 import math
 from typing import List
 
+
 def index_range(page, page_size) -> tuple:
     """
     The function should return a tuple of size two containing
@@ -18,6 +19,7 @@ def index_range(page, page_size) -> tuple:
     start = (page - 1) * page_size
     end = start + page_size
     return (start, end)
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
