@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
+"""
+Run time for four parallel comprehensions
 
+measure_runtime routine that will execute async_comprehension four
+times in parallel using asyncio.gather. measure_runtime measures
+the total execution time and returns it.
+"""
 import time
 from asyncio import gather
 
